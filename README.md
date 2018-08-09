@@ -71,7 +71,7 @@ info AppiumDoctor
 
 ```
 
-## 配制android环境
+### 配制android环境
 
 - 安装`Java`
 
@@ -91,7 +91,7 @@ export PATH=$PATH:$JAVA_HOME/bin
 验证：**重新**打开terminal工具，输入`echo $ANDROID_HOME`查看返回结果是否为设计路径地址
 
 
-## 验证`appium`环境的安装
+### 验证`appium`环境的安装
 
 ```
 ➜  ~ appium-doctor --android
@@ -111,9 +111,23 @@ info AppiumDoctor Everything looks good, bye!
 info AppiumDoctor
 ```
 
+启动`appium`
+
+```
+➜  AppiumDemo git:(master) ✗ appium
+[Appium] Welcome to Appium v1.8.1
+[Appium] Appium REST http interface listener started on 0.0.0.0:4723
+```
+## 安装`WebDriverIO`
+
+- 创建文件夹，进入文件夹，输入命令：`npm install webdriverio`
+
+
+
 ## 参考
 
 - [COMMAND NOT FOUND WITH A NODE MODULE (NPM) SOLUTION](http://blog.webbb.be/command-not-found-node-npm/)
 - [Error: EACCES, permission denied '/usr/local/lib/node_modules/___coffee-script.npm'](https://github.com/npm/npm/issues/2049)
 - [Appium Doctor - unable to set JAVA_HOME/bin](https://discuss.appium.io/t/appium-doctor-unable-to-set-java-home-bin/12902/8)
 - [Setting ANDROID_HOME enviromental variable on Mac OS X](https://stackoverflow.com/questions/19986214/setting-android-home-enviromental-variable-on-mac-os-x)
+- [WebDriverIO](http://webdriver.io/)
