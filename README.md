@@ -118,11 +118,50 @@ info AppiumDoctor
 [Appium] Welcome to Appium v1.8.1
 [Appium] Appium REST http interface listener started on 0.0.0.0:4723
 ```
-## 安装`WebDriverIO`
+## `WebDriverIO`
 
 - 创建文件夹，进入文件夹，输入命令：`npm install webdriverio`
+- 在根目录，创建`testDemo.js`文件，内容如下：
+```
+//引入WebDriverIO
+const wdio = require("webdriverio");
+
+//配制参数
+const opts = {
+    port: 4723,
+    desiredCapabilities: {
+        platformName: "Android",
+        platformVersion: "8.1",
+        deviceName: "Nexus_5X_API",
+        app: "./apk/ApiDemos-debug.apk",
+        automationName: "UiAutomator2"
+    }
+};
 
 
+//启动
+const client = wdio.remote(opts);
+
+client
+    .init()
+    .click("~App")
+    .click("~Alert Dialogs")
+    .back()
+    .back()
+    .end();
+```
+
+## APK
+
+- 下载地址：[https://github.com/appium/appium/raw/master/sample-code/apps/ApiDemos-debug.apk
+](https://github.com/appium/appium/raw/master/sample-code/apps/ApiDemos-debug.apk)
+- 在项目根目录创建`apk`文件夹，将下载的应用程序放于此文件夹下
+
+## 执行测试
+
+- 打开模拟器或连接设备
+- 执行命令：`node testDemo.js`
+- 在模拟器或设备中会显示执行测试的过程
 
 ## 参考
 
@@ -131,3 +170,4 @@ info AppiumDoctor
 - [Appium Doctor - unable to set JAVA_HOME/bin](https://discuss.appium.io/t/appium-doctor-unable-to-set-java-home-bin/12902/8)
 - [Setting ANDROID_HOME enviromental variable on Mac OS X](https://stackoverflow.com/questions/19986214/setting-android-home-enviromental-variable-on-mac-os-x)
 - [WebDriverIO](http://webdriver.io/)
+- [Appium - Getting Started](http://appium.io/docs/en/about-appium/getting-started/index.html)

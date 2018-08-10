@@ -8,7 +8,7 @@ const opts = {
         platformName: "Android",
         platformVersion: "8.1",
         deviceName: "Nexus_5X_API",
-        app: "./apk/ApiDemos-debug.apk",
+        app: "/Users/yjshi/IdeaProjects/AppiumDemo/apk/ApiDemos-debug.apk",
         automationName: "UiAutomator2"
     }
 };
